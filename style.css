@@ -1,0 +1,19 @@
+
+body
+{
+    background-color: rgb(62, 207, 226); 
+    background-image: url("fond.jpg");
+    background-attachment: scroll;
+}
+
+
+.titre
+{
+    color: rgb(240, 142, 14);
+    font-size: 2.2em;
+    text-align: center;
+    background-color: white;
+    border: 4px white outset;
+}
+
+
