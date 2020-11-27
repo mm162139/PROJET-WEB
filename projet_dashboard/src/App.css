@@ -1,7 +1,12 @@
 .App {
   text-align: center;
 }
-
+.Admin {
+  background-color: brown;
+}
+.Home{
+  background-color: blue;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ProgressBar from '../components/ProgressBar';
+import ProgressBar from '../ProgressBar/ProgressBar';
 
-class widget1 extends Component{
+class Widget1 extends Component{
   state = {
       sellsCountry: [
         {value: "Europe", nbr: 2000},
@@ -50,4 +50,4 @@ class widget1 extends Component{
 
 
 
-export default widget1;
+export default Widget1;
