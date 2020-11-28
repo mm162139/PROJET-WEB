@@ -8,10 +8,15 @@ import Widget4 from "../../components/widget4/widget4";
 import Widget3 from "../../components/widget3/widget3";
 import Widget1 from "../../components/widget1/widget1";
 import Widget6 from "../../components/widget6/widget6";
+import Widget7 from "../../components/widget7/widget7";
+import Widget8 from "../../components/widget8/widget8";
+import Widget9 from "../../components/widget9/widget9";
+
 
 const Home = () => {
   return(
-      <GridList cellHeight='auto' cols={3} spacing={20}>
+
+      <GridList cellHeight='auto' cols={3} spacing={30}>
         <GridListTile cols={1}>
             <Widget2/>
         </GridListTile>
@@ -35,6 +40,19 @@ const Home = () => {
         <GridListTile cols={3}>
             <Widget6/>
         </GridListTile>
+
+        <GridList cols={1}>
+            <Widget7/>
+        </GridList>
+
+        <GridList cols={1}>
+            <Widget8/>
+        </GridList>
+
+        <GridList cols={1}>
+            <Widget9/>
+        </GridList>
+
 
       </GridList>
   )
