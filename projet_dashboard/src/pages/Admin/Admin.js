@@ -1,13 +1,14 @@
 import React from 'react';
 import "./admin.css"
+import FormAdmin from "../../components/FormAdmin/FormAdmin";
 
 const Admin = () => {
     return(
-        <h1>Je suis la Page Admin</h1>
-
+        <div>
+            <h1>Page Admin</h1>
+            <FormAdmin/>
+        </div>
     )
-
-
 
 };
 
