@@ -1,5 +1,6 @@
 import React from 'react';
 import {BarChart,CartesianGrid,XAxis,YAxis,Tooltip,Legend,Bar} from "recharts";
+
 const sellsGames= [
     {"game": "SpiderMan", "nbr": 230},
     {"game": "COD", "nbr": 1200},
@@ -8,18 +9,18 @@ const sellsGames= [
 ]
 const ProgressBar = (props) => {
 
-  console.log(props);
-  
-  return(
+    console.log(props);
 
-      <BarChart width={730} height={250} data={sellsGames}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="game" />
-          <YAxis  />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="nbr" fill="#8884d8" />
-      </BarChart>
+    return(
+
+        <BarChart width={700} height={350} data={sellsGames}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="game" />
+            <YAxis  />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="nbr" fill="#8884d8" />
+        </BarChart>
     );
 
 };

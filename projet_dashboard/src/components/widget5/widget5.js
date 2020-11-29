@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Camembert from'../Camembert/Camembert';
 
+class Widget5 extends Component{
 
-const Widget5 = () => {
-    return(
-        <p>Widget 5</p>
-    );
+    render() {
 
-};
+        return(
+                <Camembert/>
+        );
+    }
+}
+
 
 export default Widget5;
