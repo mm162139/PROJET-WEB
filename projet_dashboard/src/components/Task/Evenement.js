@@ -4,9 +4,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Home from "./pages/Home/Home";
-import Admin from "./pages/Admin/Admin";
+import {ResponsiveContainer} from "recharts";
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -15,13 +15,13 @@ function TabPanel(props) {
         <div
             role="tabpanel"
             hidden={value !== index}
-            id={`simple-tabpanel-${index}`}
-            aria-labelledby={`simple-tab-${index}`}
+            id={`nav-tabpanel-${index}`}
+            aria-labelledby={`nav-tab-${index}`}
             {...other}
         >
             {value === index && (
                 <Box p={3}>
-                    <div>{children}</div>
+                    <Typography>{children}</Typography>
                 </Box>
             )}
         </div>
@@ -36,9 +36,21 @@ TabPanel.propTypes = {
 
 function a11yProps(index) {
     return {
-        id: `simple-tab-${index}`,
-        'aria-controls': `simple-tabpanel-${index}`,
+        id: `nav-tab-${index}`,
+        'aria-controls': `nav-tabpanel-${index}`,
     };
+}
+
+function LinkTab(props) {
+    return (
+        <Tab
+            component="a"
+            onClick={(event) => {
+                event.preventDefault();
+            }}
+            {...props}
+        />
+    );
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -48,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function App() {
+export default function NavTabs() {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
 
@@ -57,20 +69,28 @@ export default function App() {
     };
 
     return (
+        <ResponsiveContainer width="100%" height={400} >
         <div className={classes.root}>
             <AppBar position="static">
-                <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-                    <Tab label="Page Home" {...a11yProps(0)} />
-                    <Tab label="Page Admin" {...a11yProps(1)} />
+                <Tabs
+                    variant="fullWidth"
+                    value={value}
+                    onChange={handleChange}
+                    aria-label="nav tabs example"
+                >
+                    <LinkTab label="Task 1" href="/drafts" {...a11yProps(0)} />
+                    <LinkTab label="Task 2" href="/trash" {...a11yProps(1)} />
                 </Tabs>
-
             </AppBar>
             <TabPanel value={value} index={0}>
-                <Home/>
+                Rendez-vous 12h - Micromania
             </TabPanel>
             <TabPanel value={value} index={1}>
-               <Admin/>
+                Rendez-vous Sony France
             </TabPanel>
         </div>
+        </ResponsiveContainer>
+
+
     );
 }
