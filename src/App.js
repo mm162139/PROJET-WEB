@@ -1,22 +1,76 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from './pages/Home';
-import Admin from './pages/Admin.js';
+import PropTypes from 'prop-types';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import Home from "./pages/Home/Home";
+import Admin from "./pages/Admin/Admin";
 
+function TabPanel(props) {
+    const { children, value, index, ...other } = props;
 
-const App = () => {
-  return(
-    <> 
-      <BrowserRouter>
-        <Switch>
-          <Route path="/" exact component={Home} /> 
-          <Route path="/Admin" exact component={Admin} /> 
-        </Switch>
-      </BrowserRouter>
-      
-    </>
+    return (
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`simple-tabpanel-${index}`}
+            aria-labelledby={`simple-tab-${index}`}
+            {...other}
+        >
+            {value === index && (
+                <Box p={3}>
+                    <Typography>{children}</Typography>
+                </Box>
+            )}
+        </div>
     );
+}
 
+TabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.any.isRequired,
+    value: PropTypes.any.isRequired,
 };
 
-export default App;
+function a11yProps(index) {
+    return {
+        id: `simple-tab-${index}`,
+        'aria-controls': `simple-tabpanel-${index}`,
+    };
+}
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        flexGrow: 1,
+        backgroundColor: theme.palette.background.paper,
+    },
+}));
+
+export default function App() {
+    const classes = useStyles();
+    const [value, setValue] = React.useState(0);
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
+
+    return (
+        <div className={classes.root}>
+            <AppBar position="static">
+                <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
+                    <Tab label="Page Home" {...a11yProps(0)} />
+                    <Tab label="Page Admin" {...a11yProps(1)} />
+                </Tabs>
+            </AppBar>
+            <TabPanel value={value} index={0}>
+                <Home/>
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+               <Admin/>
+            </TabPanel>
+        </div>
+    );
+}

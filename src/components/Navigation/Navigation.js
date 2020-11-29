@@ -1,13 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import'/Users/thomaspopielski/Desktop/dashboard-projet/src/styles/styles.css';
 
 const Navigation = () => {
   return(
     <div class="sidebar"> 
     	<div class="id"> 
     		<div class="idContent"> 
-	    		<img src="./media/logops5.png" alt="profil-pic"/>
+	    		<img src="../../../public/therock.jpg" alt="logo PS5"/>
 	    		<h3>SONY PS5</h3>
     		</div>
       	</div>
