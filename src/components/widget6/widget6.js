@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
+import DayWork from '../ResellerW4/DayWork';
 
 
 const Widget6 = () => {
     return(
-        <p>Widget 6</p>
+        <DayWork/>
     );
 
 };
