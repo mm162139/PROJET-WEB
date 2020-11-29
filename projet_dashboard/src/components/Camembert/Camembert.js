@@ -38,7 +38,7 @@ export default class Camembert extends PureComponent {
                     cy={150}
                     labelLine={false}
                     label={renderCustomizedLabel}
-                    outerRadius={120}
+                    outerRadius={100}
                     fill="#8884d8"
                     dataKey="value"
                 >
