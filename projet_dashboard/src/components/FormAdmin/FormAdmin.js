@@ -20,27 +20,44 @@ export default function FormPropsTextFields() {
   return (
     <form className={classes.root} noValidate autoComplete="off">
       <div>
-        <TextField required id="Spider-Man" label="Widget 1 / Ventes jeux PS5" defaultValue="Spider-Man" />
-        <TextField required id="COD" label=" " defaultValue="COD Cold War" />
-        <TextField required id="FIFA" label=" " defaultValue="FIFA 21" />
+      <h4> Ventes des jeux :</h4>
+        <TextField required id="FIFA" label="FIFA 21" defaultValue="" />
+        <TextField required id="COD" label="COD Cold War" defaultValue="" />
+        <TextField required id="Spide" label="Spider-Man" defaultValue="" />
+        <br />
       </div>
 
       <div>
-        <TextField required id="Afrique" label="Widget 2 / Ventes PS5" defaultValue="Afrique" />
-        <TextField required id="Amerique-N" label=" " defaultValue="Amerique du Nord" />
-        <TextField required id="Amerique-S" label=" " defaultValue="Amerique du Sud" />
-        <TextField required id="Europe" label=" " defaultValue="Europe" />
-        <TextField required id="Asie" label=" " defaultValue="Asie" />
+      <h4> Nombre de ventes par continent :</h4>
+        <TextField required id="Afrique" label="Afrique" defaultValue="" />
+        <TextField required id="Amerique-N" label="Amerique du Nord" defaultValue="" />
+        <TextField required id="Amerique-S" label="Amerique du Sud" defaultValue="" />
+        <TextField required id="Europe" label="Europe" defaultValue="" />
+        <TextField required id="Asie" label="Asie" defaultValue="" />
+        <TextField required id="Océanie" label="Océanie" defaultValue="" />
+        <br />
       </div>
 
       <div>
-        <TextField required id="2016" label="Widget 3 / CA de Sony" defaultValue="2016" />
-        <TextField required id="2017" label=" " defaultValue="2017" />
-        <TextField required id="2018" label=" " defaultValue="2018" />
-        <TextField required id="2019" label=" " defaultValue="2019" />
-        <TextField required id="2020" label=" " defaultValue="2020" />
+      <h4> Chiffre d'affaires de Sony :</h4>
+        <TextField required id="2016" label="2016" defaultValue="" />
+        <TextField required id="2017" label="2017" defaultValue="" />
+        <TextField required id="2018" label="2018" defaultValue="" />
+        <TextField required id="2019" label="2019" defaultValue="" />
+        <TextField required id="2020" label="2020" defaultValue="" />
+        <br />
       </div>
       
+      <div>
+      <h4> Ventes des distributeurs :</h4>
+        <TextField required id="Fnac" label="Fnac" defaultValue="" />
+        <TextField required id="Micromania" label="Micromania" defaultValue="" />
+        <TextField required id="Auchan" label="Auchan" defaultValue="" />
+        <TextField required id="Carrefour" label="Carrefour" defaultValue="" />
+        <TextField required id="Leclerc" label="Leclerc" defaultValue="" />
+        <TextField required id="Amazone" label="Amazone" defaultValue="" />
+        <br />
+      </div>
     </form>
   );
 }
