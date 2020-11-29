@@ -8,6 +8,7 @@ export default class ProgressBar extends PureComponent   {
         this.state={clientHeight:0,clientWidth:0};
     }
 
+
     render()
         {
             return (
