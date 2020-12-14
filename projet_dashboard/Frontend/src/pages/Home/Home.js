@@ -12,6 +12,9 @@ import Widget7 from "../../components/Widgets/widget7/widget7";
 import Widget8 from "../../components/Widgets/widget8/widget8";
 import Widget9 from "../../components/Widgets/widget9/widget9";
 import Widget10 from "../../components/Widgets/widget10/Widget10";
+import {BrowserRouter as Router, Route} from "react-router-dom";
+import WidgetList from "../../components/widgets-list.component";
+import EditWidget from "../../components/edit-widget.component";
 
 const Home = () => {
   return(
@@ -35,7 +38,7 @@ const Home = () => {
         </GridListTile>
 
         <GridListTile cols={2}>
-            <h3><u>Evolution des ventes de consoles dans chaque continent au fil des années</u></h3>
+            <h3><u>Nombre de ventes des principaux jeux ps5</u></h3>
             <Widget1/>
         </GridListTile>
 
@@ -45,8 +48,9 @@ const Home = () => {
         </GridListTile>
 
         <GridListTile cols={3}>
-            <h3><u>Gestion des stocks en fonction des commandes de consoles par mois</u></h3>
-            <Widget6/>
+            <Router>
+                <Route path="/" component ={WidgetList}/>
+            </Router>
         </GridListTile>
 
         <GridListTile cols={1}>

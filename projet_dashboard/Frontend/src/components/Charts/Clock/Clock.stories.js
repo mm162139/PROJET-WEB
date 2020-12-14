@@ -1,15 +1,15 @@
 // YourComponent.stories.js
 
 import React from 'react';
-import Camembert from '../Camembert/Camembert';
+import Clock from './Clock';
 
 // This default export determines where your story goes in the story list
 export default {
-    title: 'Camembert',
-    component: Camembert,
+    title: 'Clock',
+    component: Clock,
 };
 
-const Template = (args) => <Camembert {...args} />;
+const Template = (args) => <Clock {...args} />;
 
 export const FirstStory = Template.bind({});
 

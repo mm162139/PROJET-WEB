@@ -8,8 +8,12 @@
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.2.2",
+    "axios": "^0.21.0",
+    "bootstrap": "^4.5.3",
+    "datepicker": "0.0.0",
     "material-design-icons": "^3.0.1",
     "react": "^17.0.1",
+    "react-datepicker": "^3.3.0",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
@@ -17,12 +21,12 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "start": "./node_modules/.bin/react-scripts start",
+    "build": "./node_modules/.bin/react-scripts build",
+    "test": "./node_modules/.bin/react-scripts test",
+    "eject": "./node_modules/.bin/react-scripts eject",
+    "storybook": "./node_modules/.bin/start-storybook -p 6006 -s Frontend/public",
+    "build-storybook": "./node_modules/.bin/build-storybook -s Frontend/public"
   },
   "eslintConfig": {
     "extends": [
